@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Skills</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <h2 class="logo">PORTFOLIO</h2>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+
+        <nav id="nav-links">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/skills/">Skills</a>
+            <a href="/projects/">Projects</a>
+            <a href="/education/">Education</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+    </header>
+
+    <!-- SKILLS SECTION -->
+    <section class="skills">
+
+        <h1 class="section-title">My Skills</h1>
+        <p class="section-subtitle">Technical & Graphic Expertise</p>
+
+        <div class="skills-container">
+
+            <!-- HTML -->
+            <div class="skill">
+                <p><img src="{% static 'images/html.png' %}" class="icon"> HTML</p>
+                <div class="progress-bar">
+                    <div class="progress html"></div>
+                </div>
+            </div>
+
+            <!-- CSS -->
+            <div class="skill">
+                <p><img src="{% static 'images/css.png' %}" class="icon"> CSS</p>
+                <div class="progress-bar">
+                    <div class="progress css"></div>
+                </div>
+            </div>
+
+            <!-- JS -->
+            <div class="skill">
+                <p><img src="{% static 'images/JavaScript.png' %}" class="icon"> JavaScript</p>
+                <div class="progress-bar">
+                    <div class="progress js"></div>
+                </div>
+            </div>
+
+            <!-- PYTHON -->
+            <div class="skill">
+                <p><img src="{% static 'images/Python.png' %}" class="icon"> Python</p>
+                <div class="progress-bar">
+                    <div class="progress python"></div>
+                </div>
+            </div>
+
+            <!-- PHOTOSHOP -->
+            <div class="skill">
+                <p><img src="{% static 'images/photoshop.png' %}" class="icon"> Adobe Photoshop</p>
+                <div class="progress-bar">
+                    <div class="progress ps"></div>
+                </div>
+            </div>
+
+            <!-- ANIMATE -->
+            <div class="skill">
+                <p><img src="{% static 'images/animate.png' %}" class="icon"> Adobe Animate</p>
+                <div class="progress-bar">
+                    <div class="progress animate"></div>
+                </div>
+            </div>
+
+            <!-- ILLUSTRATOR -->
+            <div class="skill">
+                <p><img src="{% static 'images/illustrator.png' %}" class="icon"> Adobe Illustrator</p>
+                <div class="progress-bar">
+                    <div class="progress ai"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HAMBURGER SCRIPT -->
+    <script>
+        const toggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav-links');
+
+        toggle.onclick = () => {
+            nav.classList.toggle('active');
+        };
+    </script>
+
+</body>
+
+</html>

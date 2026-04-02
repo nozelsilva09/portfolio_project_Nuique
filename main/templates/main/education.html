@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Education</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <h2 class="logo">PORTFOLIO</h2>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <nav id="nav-links">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/skills/">Skills</a>
+        <a href="/projects/">Projects</a>
+        <a href="/education/">Education</a>
+        <a href="/contact/">Contact</a>
+    </nav>
+</header>
+
+<!-- EDUCATION -->
+<section class="education">
+
+    <h1 class="section-title">My Education</h1>
+    <p class="section-subtitle">My academic journey 🎓</p>
+
+    <div class="education-container">
+
+        <!-- CARD 1 -->
+        <div class="edu-card">
+            <div class="edu-icon">🎓</div>
+
+            <h3>Bachelor of Science in Information Technology</h3>
+            <p class="school">Negros Oriental State University</p>
+            <span class="year">2023 - 2026</span>
+
+            <p class="desc">
+                Focused on web development, programming, and system design.
+            </p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="edu-card">
+            <div class="edu-icon">💻</div>
+
+            <h3>Senior High School (ICT Strand)</h3>
+            <p class="school">Sta. Catalina National High School</p>
+            <span class="year">2020 - 2022</span>
+
+            <p class="desc">
+                Learned programming fundamentals and digital design.
+            </p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="edu-card">
+            <div class="edu-icon">📘</div>
+
+            <h3>Junior High School</h3>
+            <p class="school">Sta. Catalina National High School</p>
+            <span class="year">2016 - 2020</span>
+
+            <p class="desc">
+                Built strong academic foundation and interest in technology.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HAMBURGER -->
+<script>
+const toggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('nav-links');
+
+toggle.onclick = () => {
+    nav.classList.toggle('active');
+};
+</script>
+
+</body>
+</html>

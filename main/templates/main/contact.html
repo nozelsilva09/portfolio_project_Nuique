@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- ICONS (Font Awesome CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <h2 class="logo">PORTFOLIO</h2>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <nav id="nav-links">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/skills/">Skills</a>
+        <a href="/projects/">Projects</a>
+        <a href="/education/">Education</a>
+        <a href="/contact/">Contact</a>
+    </nav>
+</header>
+
+<!-- CONTACT -->
+<section class="contact">
+
+    <h1 class="section-title">Contact Me</h1>
+    <p class="section-subtitle">Let’s work together 💜</p>
+
+    <div class="contact-container">
+
+        <!-- FORM -->
+        <form method="POST" class="contact-form">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <input type="text" name="name" required>
+                <label>Your Name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" name="email" required>
+                <label>Your Email</label>
+            </div>
+
+            <div class="input-group">
+                <textarea name="message" rows="5" required></textarea>
+                <label>Your Message</label>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+
+        </form>
+
+        <!-- CONTACT INFO -->
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>rukagex@gmail.com</span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+63 9634181357</span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <span>github.com/yourusername</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HAMBURGER -->
+<script>
+const toggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('nav-links');
+
+toggle.onclick = () => {
+    nav.classList.toggle('active');
+};
+</script>
+
+</body>
+</html>

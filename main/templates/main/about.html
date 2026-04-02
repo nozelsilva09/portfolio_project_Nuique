@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- NAVBAR (SAME AS HOME) -->
+<header class="navbar">
+    <h2 class="logo">PORTFOLIO</h2>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <nav id="nav-links">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/skills/">Skills</a>
+        <a href="/projects/">Projects</a>
+        <a href="/education/">Education</a>
+        <a href="/contact/">Contact</a>
+    </nav>
+</header>
+
+<!-- ABOUT SECTION -->
+<section class="about">
+
+    <h1 class="section-title">About Me</h1>
+
+    <div class="about-container">
+
+        <!-- PROFILE IMAGE -->
+        <div class="about-img">
+            <img src="{% static 'images/profile.jpg' %}" alt="profile">
+        </div>
+
+        <!-- TEXT BELOW -->
+        <div class="about-text">
+            <p>
+                Hello! I am an IT student passionate about web development and graphic design.
+                I enjoy creating aesthetic and functional websites using modern technologies.
+            </p>
+
+            <p>
+                I am continuously improving my skills in Django, front-end design,
+                and building real-world projects.
+            </p>
+
+            <h3>Career Goal</h3>
+            <p>
+                To become a professional web developer and designer,
+                creating impactful and user-friendly digital experiences.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HAMBURGER SCRIPT -->
+<script>
+const toggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('nav-links');
+
+toggle.onclick = () => {
+    nav.classList.toggle('active');
+};
+</script>
+
+</body>
+</html>

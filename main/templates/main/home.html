@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- MATRIX BACKGROUND -->
+<canvas id="matrix"></canvas>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <h2 class="logo">PORTFOLIO</h2>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <nav id="nav-links">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/skills/">Skills</a>
+        <a href="/projects/">Projects</a>
+        <a href="/education/">Education</a>
+        <a href="/contact/">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-text">
+        <h3>Hey I'm <span class="highlight">John Mark Joseph R. Nuique</span></h3>
+
+        <h1>
+            I'm a <span id="typing" class="typing-glow"></span>
+        </h1>
+
+        <p>
+            I combine Graphic Design and Web Development to build beautiful, easy-to-use websites. Using Django and modern tools, I make sure every project looks great and works perfectly on any screen.
+        </p>
+
+        <a href="/projects/" class="btn">View My Work</a>
+    </div>
+
+    <div class="hero-img">
+        <img src="{% static 'images/profile.jpg' %}" alt="profile">
+    </div>
+
+</section>
+
+<!-- TYPING EFFECT -->
+<script>
+const text = ["Web Developer", "Graphic Designer"];
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+    if(count === text.length){
+        count = 0;
+    }
+    currentText = text[count];
+    letter = currentText.slice(0, ++index);
+
+    document.getElementById("typing").textContent = letter;
+
+    if(letter.length === currentText.length){
+        count++;
+        index = 0;
+    }
+
+    setTimeout(type, 120);
+})();
+</script>
+
+<!-- HAMBURGER MENU -->
+<script>
+const toggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('nav-links');
+
+toggle.onclick = () => {
+    nav.classList.toggle('active');
+};
+</script>
+
+<!-- MATRIX SCRIPT -->
+<script>
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+let letters = "01DESIGNCODEDJANGO";
+letters = letters.split("");
+
+let fontSize = 14;
+let columns = canvas.width / fontSize;
+
+let drops = [];
+for (let i = 0; i < columns; i++) drops[i] = 1;
+
+function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#d400ff";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        let text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975)
+            drops[i] = 0;
+
+        drops[i]++;
+    }
+}
+
+setInterval(draw, 33);
+</script>
+
+</body>
+</html>
